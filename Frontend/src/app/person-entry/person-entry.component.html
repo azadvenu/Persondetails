@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sr-12 col-md-12 col-lg-12">
+            <div class="row g-3">
+                <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
+                 
+                    <label for="" class="form-label">NAME</label>
+                    <input type="text" name = "name" class="form-control" [(ngModel)]="name">
+
+                </div>
+                <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
+ 
+                    <label for="" class="form-label">JERSEY NO</label>
+                    <input type="text" name="jerseyno" class="form-control" [(ngModel)]="jerseyno">
+
+                </div>
+                <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
+
+                    <label for="" class="form-label">AGE</label>
+                    <input type="text" name="age" class="form-control" [(ngModel)]="age">
+
+
+                </div>
+                <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
+
+                    <label for="" class="form-label">PLACE</label>
+                    <input type="text" name="place" class="form-control" [(ngModel)]="place">
+
+
+                </div>
+                <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
+                   <button (click)="submitbtnclick()" class="btn btn-primary">SUBMIT</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

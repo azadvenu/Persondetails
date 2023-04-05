@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SI NO</th>
+        <th scope="col">NAME</th>
+        <th scope="col">JERSEY NO</th>
+        <th scope="col">AGE</th>
+        <th scope="col">PLACE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of data; let j=index">
+        <th scope="row">{{j+1}}</th>
+        <th >{{i.name}}</th>
+        <td>{{i.jerseyno}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.place}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
