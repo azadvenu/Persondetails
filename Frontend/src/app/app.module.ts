@@ -8,7 +8,7 @@ import { ViewallPersonComponent } from './viewall-person/viewall-person.componen
 import { UpdatePersonComponent } from './update-person/update-person.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
@@ -31,7 +31,8 @@ const approutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(approutes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

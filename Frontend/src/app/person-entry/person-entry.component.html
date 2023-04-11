@@ -1,40 +1,55 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-    <div class="row">
+    <form #userlogin="ngForm" >   
+        <div class="row">
         <div class="col col-12 col-sr-12 col-md-12 col-lg-12">
             <div class="row g-3">
-                <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
-                 
+                <div class="formGroup">
+                 <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
+                    
+                   
                     <label for="" class="form-label">NAME</label>
-                    <input type="text" name = "name" class="form-control" [(ngModel)]="name">
-
+                    <input type="text"  name ="name"  class="form-control" [(ngModel)]="User.name"   #name="ngModel"[class.is-invalid]="name.invalid && name.touched" required pattern="[a-zA-Z ]*">
+                    <small class="text-danger" [class.d-none]="name.valid||name.untouched">Enter Valid name</small>
+                    
                 </div>
+            </div>
+            <div class="formGroup">
                 <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
  
                     <label for="" class="form-label">JERSEY NO</label>
-                    <input type="text" name="jerseyno" class="form-control" [(ngModel)]="jerseyno">
+                    <input type="number"  name="jerseyno" class="form-control" [(ngModel)]="User.jerseyno" #jerseyno="ngModel" [class.is-invalid]="jerseyno.invalid && jerseyno.touched" required minlength="2">
+                    <small class="text-danger" [class.d-none]="jerseyno.valid||jerseyno.untouched">Enter Valid jerseyno</small>
 
                 </div>
+            </div>
+            <div class="formGroup">
                 <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
 
                     <label for="" class="form-label">AGE</label>
-                    <input type="text" name="age" class="form-control" [(ngModel)]="age">
+                    <input type="number" name="age" class="form-control" [(ngModel)]="User.age" #age ="ngModel" [class.is-invalid]="age.invalid && age.touched" required maxlength="2">
+                    <small class="text-danger" [class.d-none]="age.valid||age.untouched">Enter Valid age</small>
 
 
                 </div>
+            </div>
+            <div class="formGroup">
                 <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
 
                     <label for="" class="form-label">PLACE</label>
-                    <input type="text" name="place" class="form-control" [(ngModel)]="place">
+                    <input type="text" name="place" class="form-control" [(ngModel)]="User.place" #place="ngModel" [class.is-invalid]="place.invalid && place.touched" required pattern="[a-zA-Z]*">
+                    <small class="text-danger" [class.d-none]="place.valid||place.untouched">Enter Valid Place</small>
 
 
                 </div>
+            </div>
                 <div class="col col-12 col-sn-6 col-md-6 col-lg-6">
-                   <button (click)="submitbtnclick()" class="btn btn-primary">SUBMIT</button>
+                   <button (click)="submitbtnclick()" class="btn btn-primary"  [disabled]="userlogin.form.invalid">SUBMIT</button>
 
                 </div>
             </div>
         </div>
     </div>
+    </form>
 </div>

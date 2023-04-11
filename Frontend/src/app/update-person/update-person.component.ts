@@ -25,7 +25,6 @@ searchbtnevent=()=>{
   this.api.searchPerson(data).subscribe(
     (res:any)=>{ 
       console.log(res) 
-      
       this.name= res[0].name
       this.age = res[0].age
       this.place= res[0].place
@@ -50,6 +49,27 @@ this.api.updatePerson(data).subscribe(
     }
   }
 )
+}
+
+
+deletebtnevent=()=>{
+  let data = {"_id":this._id, "name":this.name, "age":this.age, "jerseyno":this.jerseyno,"place":this.place}
+  // let data={"jerseyno": this.jerseyno}
+  // console.log(data)
+ 
+  this.api.deletePerson(data).subscribe(
+  (res:any)=>{
+    
+    if(res.status==="deleted"){
+      console.log(res)
+      alert('person deleted')
+    }else{
+      console.log(Error)
+    }
+    this.myroute.navigateByUrl("/viewall")
+  }
+)
+
 }
 
   ngOnInit(): void {

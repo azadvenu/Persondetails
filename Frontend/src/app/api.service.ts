@@ -23,4 +23,8 @@ export class ApiService {
   searchPerson = (data:any)=>{
     return this.http.post("http://localhost:3000/api/personsearch",data)
   }
+
+  deletePerson = (data:any)=>{
+    return this.http.delete("http://localhost:3000/api/persondelete",data)
+  }
 }
